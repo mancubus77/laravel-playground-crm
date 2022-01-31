@@ -1,5 +1,14 @@
 <template>
   <Head title="Login" />
+
+  <div class="example bg-red-700 text-3xl font-bold">
+    <h3 id="example-1">#1 - Single slider</h3>
+    <div class="output">Data: {{ value }}</div>
+    <Slider v-model="value" 
+            :min="0"
+            :max="10"></Slider>
+  </div>
+
   <div class="flex items-center justify-center p-6 min-h-screen bg-indigo-800">
     <div class="w-full max-w-md">
       <logo class="block mx-auto w-full max-w-xs fill-white" height="50" />
@@ -27,6 +36,9 @@ import { Head } from '@inertiajs/inertia-vue3'
 import Logo from '@/Shared/Logo'
 import TextInput from '@/Shared/TextInput'
 import LoadingButton from '@/Shared/LoadingButton'
+import axios from 'axios'
+import Slider from '@vueform/slider'
+let value = 21
 
 export default {
   components: {
@@ -34,6 +46,7 @@ export default {
     LoadingButton,
     Logo,
     TextInput,
+    Slider,
   },
   data() {
     return {
@@ -42,12 +55,22 @@ export default {
         password: 'secret',
         remember: false,
       }),
+      value: 30,
     }
   },
   methods: {
     login() {
       this.form.post('/login')
+      console.log(this.form)
+      // this.form.post('/zuzu')
+      // console.log(this.form)
+
+//   axios.get(`./zuzu`).then((response) => {
+    //     console.log(response.data)
+    //   })
     },
   },
 }
 </script>
+
+<style src="@vueform/slider/themes/default.css"></style>

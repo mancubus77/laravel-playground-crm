@@ -3,15 +3,23 @@
     <div class="mb-4">
       <Link class="group flex items-center py-3" href="/">
         <icon name="dashboard" class="mr-2 w-4 h-4" :class="isUrl('') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'" />
-        <div :class="isUrl('') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Dashboard</div>
+        <div :class="isUrl('') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Dashboard1</div>
       </Link>
     </div>
     <div class="mb-4">
       <Link class="group flex items-center py-3" href="/organizations">
         <icon name="office" class="mr-2 w-4 h-4" :class="isUrl('organizations') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'" />
-        <div :class="isUrl('organizations') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Organizations</div>
+        <div :class="isUrl('organizations') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Organizations1</div>
       </Link>
     </div>
+
+    <div class="mb-4">
+      <Link class="group flex items-center py-3" href="/bprocs">
+        <icon name="office" class="mr-2 w-4 h-4" :class="isUrl('bprocs') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'" />
+        <div :class="isUrl('bprocs') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Business Processes</div>
+      </Link>
+    </div>
+
     <div class="mb-4">
       <Link class="group flex items-center py-3" href="/contacts">
         <icon name="users" class="mr-2 w-4 h-4" :class="isUrl('contacts') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'" />

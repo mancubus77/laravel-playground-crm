@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Pam;
+use App\Http\Controllers\PamController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +18,25 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+// Route::get('bprocd', function() {
+//     // If the Content-Type and Accept headers are set to 'application/json', 
+//     // this will return a JSON structure. This will be cleaned up later.
+//     return Pam::all();
+// });
+
+Route::resource('bprocs', PamController::class);
+
+// Route::group(['middleware' => 'auth:sanctum'], function() {
+//     Route::get('/user', function(Request $request) {
+//         return auth()->user();
+//     });
+
+//     Route::resource('bprocs', PamController::class);
+
+
+// {
+//     // Route::get('bproc', 'PamController@index');
+//     Route::get('bproc', [UserController::class, 'index']);
+// });

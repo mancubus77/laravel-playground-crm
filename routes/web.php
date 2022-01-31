@@ -1,12 +1,16 @@
 <?php
 
+// use App\Http\Controllers\Api_Controller;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BprocsController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\OrganizationsController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\Pam\PamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +42,16 @@ Route::delete('logout', [AuthenticatedSessionController::class, 'destroy'])
 Route::get('/', [DashboardController::class, 'index'])
     ->name('dashboard')
     ->middleware('auth');
+
+// Telco test
+
+Route::get('bprocs', [BprocsController::class, 'index'])
+->name('bprocs')
+->middleware('auth');
+
+// API test
+Route::get('zuzu', [PamController::class, 'index'])
+    ->name('zuzu');
 
 // Users
 
